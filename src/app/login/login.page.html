@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-title>Log In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+  <h2 class="auth-title ion-color-light ion-padding-start" >
+    <ion-label color="light">  Welcome! to</ion-label>
+    <br/>
+    <ion-label color="light"> </ion-label>
+  </h2>
+
+
+  <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+    <ion-list style="margin-top: 60%" class="inputs-list" lines="none" >
+      <ion-item class="input-item" color="none">
+        <ion-input type="email" autocomplete="off" placeholder="Email" formControlName="email" clearInput autocapitalize="off" inputmode="email"></ion-input>
+      </ion-item>
+      <div class="error-container">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <span>{{ validation.message }}</span>
+          </div>
+        </ng-container>
+      </div>
+
+      <ion-item color="none" class="input-item">
+        <app-show-hide-password>
+          <ion-input  autocomplete="off" type="password"  placeholder="Password" formControlName="password"></ion-input>
+        </app-show-hide-password>
+      </ion-item>
+      <div class="error-container">
+        <ng-container *ngFor="let validation of validation_messages.password">
+          <div class="error-message" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <span>{{ validation.message }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </ion-list>
+<div class="ion-margin ion-text-center">
+    <ion-button style="margin-top: 25px" expand="block" class="login-btn" type="submit"  [disabled]="!loginForm.valid">Log In</ion-button>
+
+</div>
+    <ion-row class="other-auth-options-row">
+      <ion-button  class="forgot-btn" fill="clear" [routerLink]="['/auth/forgot-password']">
+        Forgot Password?
+      </ion-button>
+      <ion-button class="signup-btn" fill="clear" [routerLink]="['/auth/signup']">
+        Sign Up!
+      </ion-button>
+    </ion-row>
+  </form>
+
+<!--  <div class="social-auth-options">-->
+<!--    <p class="options-divider">Or</p>-->
+<!--    <ion-button class="social-auth-btn facebook-auth-btn" expand="block" color="facebook" (click)="doFacebookLogin()">Log In with Facebook</ion-button>-->
+<!--    <ion-button class="social-auth-btn google-auth-btn" expand="block" color="google" (click)="doGoogleLogin()">Log In with Google</ion-button>-->
+<!--    <ion-button class="social-auth-btn " expand="block" color="dark" (click)="doTwitterLogin()">Log In with Apple</ion-button>-->
+<!--  </div>-->
+</ion-content>

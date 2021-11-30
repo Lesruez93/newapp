@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center" color="light">
+     Notifications
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="notifications-content">
+  <ng-container  *ngIf="notifications.length == 0">
+    <h4  class="empty-list-message">
+      No new notifications
+    </h4>
+  </ng-container>
+
+
+  <ion-item-group *ngIf="notifications.length > 0">
+    <ion-item class="notification-item" lines="full" *ngFor="let notification of notifications" >
+      <ion-row class="notification-item-wrapper">
+        <ion-col style="background: black" size="2">
+          <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+            <app-image-shell class="notification-image" [src]="notification.image" [alt]="''"></app-image-shell>
+          </app-aspect-ratio>
+        </ion-col>
+        <ion-col  size="10" class="details-wrapper">
+          <h2 class="details-name">{{ notification?.type }}</h2>
+          <p class="details-description">{{ notification?.problem }}</p>
+
+          <ion-text color="primary" class="details-description ion-margin-top">{{ notification?.date|date:'dd MMM YYYY h:mm' }}</ion-text>
+
+        </ion-col>
+
+      </ion-row>
+    </ion-item>
+  </ion-item-group>
+
+</ion-content>

@@ -1,0 +1,130 @@
+<ion-header xmlns="http://www.w3.org/1999/html">
+  <ion-toolbar color="primary">
+    
+    <ion-title color="light">
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="bg">
+    <div class="ion-margin">
+      <ion-label color="light"> <h1>Viset</h1></ion-label>
+    </div>
+    <div class="ion-margin">
+      <ion-text color="light">  Promoting the participation of <br>
+         vendors</ion-text>
+    </div>
+
+  </ion-card>
+
+  <ion-card class="light-gb">
+
+  </ion-card>
+
+
+  <ion-card class="light-gb">
+
+
+  </ion-card>
+
+  <ion-grid style="margin-bottom: 15%">
+    <section class="content-section services-wrapper">
+      <h5 class="section-header">Services</h5>
+      <ion-row class="related-users-row">
+
+
+        <ion-col routerLink="/faqs"  class="related-user-item" size="4">
+          <ion-card style="height: 133px;width: 114px" class="light-gb ion-padding">
+
+            <div class="ion-text-center ">
+              <ion-icon size="large" color="light" name="help-circle-outline"></ion-icon>
+              <ion-text color="light" >
+               Frequently asked questions
+              </ion-text>
+            </div>
+          </ion-card>
+        </ion-col>
+
+
+
+
+        <ion-col (click)="nav('Suspension','/assets/icon/icon-engine@2x.svg')" class="related-user-item" size="4">
+          <ion-card style="height: 133px;width: 114px" class="bgb ion-padding">
+
+            <div class="ion-text-center ">
+
+              <ion-icon size="large" color="light" name="thumbs-up-outline"></ion-icon><br>
+              <ion-text color="light" >
+                Voter Education for Polling
+              </ion-text>
+            </div>
+          </ion-card>
+        </ion-col>
+
+
+        <ion-col (click)="nav('centers','Voter Registration Centres')" class="related-user-item" size="4">
+          <ion-card style="height: 133px;width: 114px" class="light-gb ion-padding">
+
+            <div class="ion-text-center ">
+              <ion-icon size="large" color="light" name="location-outline"></ion-icon><br>
+              <ion-text color="light" >
+                Voter Registration Centres
+              </ion-text>
+            </div>
+          </ion-card>
+        </ion-col>
+
+      </ion-row>
+
+
+        <ion-row class="related-users-row ion-margin-top">
+        <ion-col (click)="nav('Brakes','./assets/icon/icon-steering.svg')" class="related-user-item" size="4">
+          <ion-card style="height: 133px;width: 114px" class="bgb ion-padding">
+
+            <div class="ion-text-center ">
+              <ion-icon size="large" color="light" name="receipt-outline"></ion-icon><br>
+              <ion-text color="light" >
+                Nomination Court Requirements
+              </ion-text>
+            </div>
+          </ion-card>
+        </ion-col>
+
+
+
+
+        <ion-col (click)="nav('Steering' ,'./assets/icon/icon-exhaust.svg')" class="related-user-item" size="4">
+          <ion-card style="height: 133px;width: 114px" class="light-gb ion-padding">
+            <div class="ion-text-center ">
+
+              <ion-icon size="large" color="light" name="people-circle-outline"></ion-icon><br>
+
+              <ion-text color="light">
+                Code of Conduct - Parties and Candidates
+              </ion-text>
+            </div>
+          </ion-card>
+        </ion-col>
+
+
+
+        <ion-col (click)="nav('Exhaust System', './assets/icon/icon-exhaust.svg')" class="related-user-item" size="4">
+          <ion-card style="height: 133px;width: 114px" class="bgb ion-padding">
+
+            <div class="ion-text-center ">
+              <ion-icon size="large" color="light"name="help-outline"></ion-icon><br>
+              <ion-text color="light">
+                Zim Election Facts
+              </ion-text>
+            </div>
+          </ion-card>
+        </ion-col>
+
+
+      </ion-row>
+    </section>
+  </ion-grid>
+
+</ion-content>

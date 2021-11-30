@@ -1,0 +1,84 @@
+@import "../../../theme/mixins/scrollbars";
+
+// Custom variables
+// Note:  These ones were added by us and have nothing to do with Ionic CSS Custom Properties
+:host {
+  --page-margin: var(--app-narrow-margin);
+
+  --page-categories-gutter: calc(var(--page-margin) / 4);
+
+  --page-category-background: var(--ion-color-medium);
+  --page-category-background-rgb: var(--ion-color-medium-rgb);
+}
+
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+
+.bg{
+  height: 180px;
+  background: #3A7AB8;
+
+}
+
+
+.light-gb{
+  background: #ee0a78;
+  border-radius: 20px;
+}
+
+
+.bgb{
+  background: #3a7ab8;
+  border-radius: 20px;
+}
+
+.hekimaflat{
+  position: absolute;
+
+  height: 210px;
+  left: 20px;
+  top: 70px;
+}
+
+.services-wrapper {
+  .related-users-row {
+    --ion-grid-columns: 11; // We want to show three users and a half. Each user fills 2 cols => (3.5 * 2 = 7 cols)
+    --ion-grid-column-padding: 0px;
+
+
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    will-change: scroll-position;
+    margin-left: calc(var(--page-margin) * -1);
+    margin-right: calc(var(--page-margin) * -1);
+
+    @include hide-scrollbars();
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 0 0 calc(var(--page-margin) - var(--page-related-users-gutter));
+    }
+
+    .related-user-item {
+      padding: 0px var(--page-related-users-gutter);
+
+
+    }
+  }
+}
+
+
+.content-section {
+  padding: var(--page-margin);
+  border-top: solid 1px var(--ion-color-light-shade);
+
+  .section-header {
+    margin-top: 0px;
+    margin-bottom: var(--page-margin);
+  }
+
+
+  img{
+    border-radius: 10px;
+  }
+}

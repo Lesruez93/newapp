@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Faqs</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-top">
+
+    <ion-item *ngFor="let faq of faqs" detail="true" lines="full">
+        <ion-label class="ion-text-wrap">
+            <h2>
+            {{faq}}</h2>
+        </ion-label>
+    </ion-item>
+
+</ion-content>

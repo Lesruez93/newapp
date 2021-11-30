@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Ask a question</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item class="input-item">
+    <ion-label  position="floating">Question</ion-label>
+    <ion-textarea placeholder="Your question goes here"  auto-grow rows="6" [(ngModel)]="problem"></ion-textarea>
+  </ion-item>
+
+
+
+  <ion-button (click)="submit()" class="ion-margin-top" fill="solid" expand="block">
+    Submit
+  </ion-button>
+
+</ion-content>

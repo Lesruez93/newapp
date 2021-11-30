@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-title>Profile</ion-title>
+<!--    <ion-buttons slot="end">-->
+<!--      <ion-button (click)="openFirebaseUpdateModal()">-->
+<!--        Edit-->
+<!--      </ion-button>-->
+<!--    </ion-buttons>-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="user-content">
+  <ion-row class="user-info-row">
+    <ion-col class="user-image-col" size="5">
+      <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+                <app-image-shell [mode]="'cover'"   class="user-image" animation="spinner" [src]="'/assets/images/avatar.png'" [alt]="'item image'">
+                </app-image-shell>
+      </app-aspect-ratio>
+    </ion-col>
+    <ion-col class="user-details-col" size="12">
+      <h2 class="user-name">
+                <app-text-shell animation="bouncing" [data]="user?.first_name"></app-text-shell>
+      </h2>
+
+    </ion-col>
+  </ion-row>
+
+
+  <ion-button (click)="logout()" expand="block" color="danger"><ion-icon name="power" color="light" slot="end"></ion-icon>Logout</ion-button>
+</ion-content>
